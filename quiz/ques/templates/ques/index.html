@@ -1,0 +1,9 @@
+{% if ques_avail %}
+    <ul>
+    {% for q in ques_avail %}
+        <li><a href="{% url 'detail' q.qid %}/">{{ q.question }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No questions are available.</p>
+{% endif %}
