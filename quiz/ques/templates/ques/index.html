@@ -1,48 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- {% load staticfiles %} -->
-
-  <!-- <link rel="stylesheet" type="text/css" href="{% static 'quiz/css/bootstrap.min.css' %}"> -->
-  <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
-  <script src="http://code.jquery.com/jquery.js"></script>
-  <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+<head>	
+	<title>Quiz</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+	<script src="../static/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body>
 
-<div class="container">
-  <div class="jumbotron">
-    <h1>My First Bootstrap Page</h1>
-    <p>Resize this responsive page to see the effect!</p> 
-  </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-       <a href="#" class="btn btn-info btn-lg">Search</a>
-    </div>
-  </div>
-</div>
-</body>
-
+<a href="#" class="btn btn-success btn-large">Start Quiz</a>
 {% if ques_avail %}
     <ul>
     {% for q in ques_avail %}
-        <li><a href="{% url 'detail' q.qid %}/">{{ q.question }}</a></li>
+        <br /><li><a href="{% url 'detail' q.qid %}/">{{ q.question }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
