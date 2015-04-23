@@ -12,7 +12,7 @@
 {% if ques_avail %}
     <ul>
     {% for q in ques_avail %}
-        <br /><li><a href="{% url 'detail' q.qid %}/">{{ q.question }}</a></li>
+        <br /><li><a href="{% url 'detail' q.qid %}">{{ q.question }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

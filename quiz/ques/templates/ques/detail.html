@@ -9,7 +9,9 @@
 </head>
 
 <h1>Question:</h1>
-<h2>{{ question.question}}</h2>
+<h2>{{ question.question }}</h2>
+
+<!-- 
 {% if question.choice_set.all %}
 	{% for choice in question.choice_set.all %}
 	    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
@@ -18,5 +20,8 @@
 {% else %}
     <p>No options are available. TTYL</p>
 {% endif %}
+-->
+
+{{ form.ans }}
 
 <input type="submit" value="Vote" />

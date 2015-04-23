@@ -18,3 +18,7 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+
+class options(models.Model):
+    ans = models.CharField(max_length=200)
