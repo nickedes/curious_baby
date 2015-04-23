@@ -1,11 +1,11 @@
 from django import forms
 from django.db import connection
-from .models import options
-from .models import questions
+# from .models import options
+# from .models import questions
 
 
-class optionsForm(forms.Form):
-    # print(qid)
+class OptionsForm(forms.Form):
+    # print()
     cursor = connection.cursor()
     cursor.execute(
         "select choice_text, choice_text from ques_choice where qid_id = 1")
