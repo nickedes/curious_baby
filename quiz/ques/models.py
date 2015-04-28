@@ -10,11 +10,14 @@ class questions(models.Model):
     def __str__(self):
         return self.question
 
+
 class answer(models.Model):
     qid = models.ForeignKey(questions, default=0)
     ansid = models.IntegerField()
+
     def __str__(self):
         return self.ansid
+
 
 class choice(models.Model):
     cid = models.IntegerField(primary_key=True)

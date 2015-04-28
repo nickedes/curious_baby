@@ -8,11 +8,10 @@
 	<script src="../static/bootstrap/js/bootstrap.min.js"></script>
 </head>
 
-<a href="#" class="btn btn-success btn-large">Start Quiz</a>
 {% if ques_avail %}
     <ul>
     {% for q in ques_avail %}
-        <br /><li><a href="{% url 'detail' q.qid %}">{{ q.question }}</a></li>
+        <br /><h3> <span class="glyphicon glyphicon-asterisk"></span>  <a href="{% url 'detail' q.qid %}" >{{ q.question }}</a></h3>
     {% endfor %}
     </ul>
 {% else %}
