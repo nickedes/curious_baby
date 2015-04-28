@@ -4,4 +4,4 @@ Curious baby wants to Quiz you.
 
 #Problems :
 
-* Bootstrap not working in detail.html 
+* Bootstrap not working in detail.html (Solved.)

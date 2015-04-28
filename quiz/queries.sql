@@ -1,0 +1,11 @@
+-- inserting in questions table\
+insert into ques_questions(question,qid) values ('Hi?',1);
+insert into ques_questions(question,qid) values ('Question:2',2);
+insert into ques_questions(question,qid) values ('Question:3',3);
+insert into ques_questions(question,qid) values ('Question:4',4);
+insert into ques_questions(question,qid) values ('Question:5',5);
+-- inserting in choice table
+insert into ques_choice(choice_text,votes,qid_id,cid) values ('a',0,2,4);
+insert into ques_choice(choice_text,votes,qid_id,cid) values ('z',0,3,5);
+insert into ques_choice(choice_text,votes,qid_id,cid) values ('d',0,4,6);
+insert into ques_choice(choice_text,votes,qid_id,cid) values ('k',0,5,7);
