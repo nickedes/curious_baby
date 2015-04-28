@@ -11,14 +11,14 @@
 <h1>Question:</h1>
 <h2>{{ question.question }}</h2>
 
- 
 {% if question.choice_set.all %}
-	{% for choice in question.choice_set.all %}
-	    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-	    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
-	{% endfor %}
+	<form action="">
+		{% for choice in question.choice_set.all %}
+		    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.cid }}" />
+		    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+		{% endfor %}
+		<input type="submit" value="Vote" />
+	</form> 
 {% else %}
-    <p>No options are available. Ttyl</p>
+	<p>No options are available. Ttyl</p>
 {% endif %}
-
-<input type="submit" value="Vote" />

@@ -10,15 +10,17 @@ class questions(models.Model):
     def __str__(self):
         return self.question
 
+class answer(models.Model):
+    qid = models.ForeignKey(questions, default=0)
+    ansid = models.IntegerField()
+    def __str__(self):
+        return self.ansid
 
-class Choice(models.Model):
+class choice(models.Model):
+    cid = models.IntegerField(primary_key=True)
     qid = models.ForeignKey(questions)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
 
     def __str__(self):
         return self.choice_text
-
-
-class options(models.Model):
-    ans = models.CharField(max_length=200)
