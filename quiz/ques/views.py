@@ -1,7 +1,7 @@
 from django.http import Http404
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
-from .models import questions, choice
+from .models import questions, choice, answer
 from django.db import connection
 
 
@@ -17,14 +17,12 @@ def detail(request, question_id):
         q = questions.objects.get(pk=question_id)
     except questions.DoesNotExist:
         raise Http404("Question does not exist")
-    if request.GET.get('choice') is None:
+    if request.GET['choice'] is None:
         return render(request, 'ques/detail.html', {'question': q})
     else:
-        pop = request.GET.get('choice')
-        print(question_id)
-        cursor = connection.cursor()
-        cursor.execute("INSERT into ques_answer (qid_id, ansid) VALUES (%d,%d)" % (
-            int(question_id), int(pop)))
+        pop = request.GET['choice']
+        obj = answer(qid = q, ansid = int(pop))
+        obj.save()
         return render_to_response('ques/answer.html')
 
 
