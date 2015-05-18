@@ -21,7 +21,7 @@ def detail(request, question_id):
         return render(request, 'ques/detail.html', {'question': q})
     else:
         pop = request.GET['choice']
-        obj = answer(qid = q, ansid = int(pop))
+        obj = answer(qid=q, ansid=int(pop))
         obj.save()
         return render_to_response('ques/answer.html')
 
@@ -33,6 +33,7 @@ def results(request, question_id):
 
 def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
+
 
 def add(request):
     return render_to_response('ques/add.html')
