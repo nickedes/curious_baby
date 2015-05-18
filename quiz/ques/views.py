@@ -17,7 +17,7 @@ def detail(request, question_id):
         q = questions.objects.get(pk=question_id)
     except questions.DoesNotExist:
         raise Http404("Question does not exist")
-    if request.GET['choice'] is None:
+    if request.GET.get('choice') is None:
         return render(request, 'ques/detail.html', {'question': q})
     else:
         pop = request.GET['choice']
@@ -33,3 +33,6 @@ def results(request, question_id):
 
 def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
+
+def add(request):
+    return render_to_response('ques/add.html')
