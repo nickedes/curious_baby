@@ -40,9 +40,10 @@ def add(request):
     else:
         if request.GET.get('choice') is not None:
             # TODO: get the next qid for entry in db.
-            obj = questions(question=request.GET['question'], qid=6) 
+            obj = questions(question=request.GET['question'], qid=6)
             obj.save()
             # TODO: get cid for choice entry.
-            choice_obj = choice(cid=15,qid=obj,choice_text=request.GET['choice'],votes=0)
+            choice_obj = choice(
+                cid=15, qid=obj, choice_text=request.GET['choice'], votes=0)
             choice_obj.save()
             return render_to_response('ques/add.html')
