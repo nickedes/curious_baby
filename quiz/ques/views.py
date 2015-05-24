@@ -47,3 +47,6 @@ def add(request):
                 cid=15, qid=obj, choice_text=request.GET['choice'], votes=0)
             choice_obj.save()
             return render_to_response('ques/add.html')
+
+def modify(request, question_id):
+    return render_to_response('ques/modify.html')
