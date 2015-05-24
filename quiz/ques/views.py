@@ -48,5 +48,14 @@ def add(request):
             choice_obj.save()
             return render_to_response('ques/add.html')
 
+
 def modify(request, question_id):
-    return render_to_response('ques/modify.html')
+    if request.GET.get('question') is None:
+        return render_to_response('ques/modify.html')
+    else:
+        q = questions.objects.get(pk=question_id)
+        q.question = request.GET['question']
+        q.save()
+        ques_avail = questions.objects.all()
+        context = {'ques_avail': ques_avail}
+        return render(request, 'ques/index.html', context)
