@@ -18,9 +18,6 @@ def detail(request, question_id):
         raise Http404("Question does not exist")
     if request.GET.get('choice') is None:
         return render(request, 'ques/detail.html', {'question': q})
-
-    elif request.GET.get('') is not None:
-        return render_to_response('ques/change_choices.html')
     
     else:
         pop = request.GET['choice']
@@ -28,6 +25,8 @@ def detail(request, question_id):
         obj.save()
         return render_to_response('ques/answer.html')
 
+def changes(request, question_id):
+    return render_to_response('ques/change_choices.html')
 
 def results(request, question_id):
     response = "You're looking at the results of question %s."

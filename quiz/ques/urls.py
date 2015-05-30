@@ -8,6 +8,7 @@ urlpatterns = [
     # ex: /ques/5/
     url(r'^(?P<question_id>[0-9]+)/$', views.detail, name='detail'),
     url(r'^(?P<question_id>[0-9]+)/mod$', views.modify, name='modify'),
+    url(r'^(?P<question_id>[0-9]+)/modify$', views.changes, name='changes'),
     # ex: /ques/5/results/
     url(r'^(?P<question_id>[0-9]+)/results/$', views.results, name='results'),
     # ex: /ques/5/vote/
