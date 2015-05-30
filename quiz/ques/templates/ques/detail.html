@@ -17,7 +17,12 @@
 		    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.cid }}" />
 		    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
 		{% endfor %}
+		<br>
 		<input type="submit" class="btn btn-success btn-large" value="Answer" />
+		<br><br>
+	</form>
+	<form action="">
+		<input type="submit" name = "modify" class="btn btn-success btn-danger" value="Modify Choices" />
 	</form> 
 {% else %}
 	<p>No options are available. Ttyl</p>
